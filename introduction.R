@@ -270,12 +270,33 @@ is.na(newscores) # works
 
 
  
-# ---- 8. Data Structures: Data Frames
+# ---- 8. Data Structures: Data Frames ----
 # Data Frames are the name to the objects you likely
 # think of when you hear the word dataset.
 # Option 1: R has many built in datasets
 irisdata <- datasets:: iris
 irisdata
+ 
+# Option 2: We can create our own data frame
+# Goal: Create a data frame with a column called 'numbers'
+# containing the values 1 to 5 and a column called 'animals'
+# containing the species of your favorite animals
+mydata <- data.frame(numbers = 1:5,
+                     animals = c('dog', 'sharks','bear',
+                                 'deer','moose'))
+mydata
 
-# Option 2: We can create our own
+# IMPORTANT: each column is a vector (and ATOMIC)
+# but data frames as a whole can have different data classes
 
+# In R you can extract a column of a data frame using $
+# dataframename$columnname
+
+mydata$numbers # Show me the contents of the column called numbers in the object mydata
+mydata$animals
+mydata$testscores
+
+# Then you can treat the extracted contents like a regular vector
+mean(mydata$numbers)
+
+# Option 3: Downloading data from an external source
