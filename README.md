@@ -4,6 +4,8 @@ Session 1: Introduction to RStudio, Spring 2024 [Course Outline](https://github.
 
 Session 2: Statistical Analysis with RStudio, Summer 2024 **insert course outline here**
 
+**FULL WORKSHOP MATERIALS WILL BE MADE AVAILABLE AT A LATER DATE**
+
 ## Getting Started
 
 **1. Install R**
