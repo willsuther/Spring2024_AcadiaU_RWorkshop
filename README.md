@@ -1,6 +1,7 @@
 # RStudio Workshop: Acadia University
 
 Session 1: Introduction to RStudio, Spring 2024 **insert course outline here**
+
 Session 2: Statistical Analysis with RStudio, Summer 2024 **insert course outline here**
 
 ## Getting Started
