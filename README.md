@@ -6,7 +6,7 @@ One Paragraph of project description goes here
 
 **1. Install R**
 
-If you are using Windows, use [Named Link]([https://cran.r-project.org/bin/windows/base/release.htm] "this .exe file") to download and install the software.
+If you are using Windows, use [Named Link](https://cran.r-project.org/bin/windows/base/release.htm "this .exe file") to download and install the software.
 
 ### Prerequisites
 
