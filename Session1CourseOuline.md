@@ -38,7 +38,18 @@ Learning Objectives:
 
 Associated Files:
 
-* ```3-data_wrangling_blank.xlsx``` includes an outline and can be used to code along with the instructor, fill in the blank style (recommended)
-* ```3-data_wrangling.xlsx``` includes notes and code
+* ```3-data_wrangling_BLANK.R``` includes an outline and can be used to code along with the instructor, fill in the blank style (recommended)
+* ```3-data_wrangling.R``` includes notes and code
 * ```data_tbd.csv``` dataset to be used in the module
 ## Module 4: Data Visualization
+Learning Objectives:
+
+* Describe the layered grammar of graphics
+* Recognize {ggplot2} syntax and functions
+* Create high quality scatterplots, boxplots, and histograms using {ggplot2} functions
+
+Associated Files:
+
+* ```4-data_visualization_BLANK.R``` includes an outline and can be used to code along with the instructor, fill in the blank style (recommended)
+* ```4-data_visualization.R``` includes notes and code
+* ```target_viz.PNG``` is a plot used during an excercise
