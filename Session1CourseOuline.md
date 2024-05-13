@@ -9,7 +9,9 @@ Learning Objectives:
 * Apply functions to accomplish tasks in R
 * Demonstarte best practices of organizing code
 
-  
+  Associated Files;
+
+  *```1-introduction_BLANK.R```
 
 ## Module 2: Best Practices of Tidy Data
 ## Module 3: Data Wrangling
