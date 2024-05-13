@@ -13,7 +13,7 @@ If you are using a Mac, go to [this link](https://cran.r-project.org/bin/windows
 *If you already have R installed on your computer, please ensure it's at least version 4.0 by running the command: R.version.string in your console*
 
 **2. Install RStudio**
-Install the free RStudio IDE from [this website]([https://cran.r-project.org/bin/windows/base/release.htm](https://posit.co/download/rstudio-desktop/#download) ) by selecting the version appropriate for your operating system (Windows or Mac).
+Install the free RStudio IDE from [this website](https://posit.co/download/rstudio-desktop/#download) by selecting the version appropriate for your operating system (Windows or Mac).
 
 *If you already have RStudio installed on your computer, please ensure that it is at least version 1.4 by selecting "About RStudio" from the Help dropdown menu*
 
