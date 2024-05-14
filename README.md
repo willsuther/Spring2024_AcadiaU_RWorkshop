@@ -2,7 +2,7 @@
 
 Session 1: Introduction to RStudio, Spring 2024 [Course Outline](https://github.com/willsuther/Spring2024_AcadiaU_RWorkshop/blob/main/Session1CourseOuline.md)
 
-Session 2: Statistical Analysis with RStudio, Summer 2024 **insert course outline here**
+Session 2: Statistical Analysis with RStudio, Summer 2024 [Course Outline](https://github.com/willsuther/Summer2024_AcadiaU_RWorkshop/blob/main/Session2CourseOutline.md)
 
 **FULL WORKSHOP MATERIALS WILL BE MADE AVAILABLE AT A LATER DATE**
 
