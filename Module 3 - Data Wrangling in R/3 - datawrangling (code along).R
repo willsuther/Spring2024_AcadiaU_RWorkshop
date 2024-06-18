@@ -48,7 +48,7 @@ glimpse(fish) # {dplyr} function
 select(fish, ???)
 
 # Goal: Output the columns called year and tl
-select(fish, year, tl)
+select(fish, ???, ???)
 
 # Goal: Convert the data frame to a tibble for easier viewing
 fish_tb <- as_tibble(fish)
@@ -59,17 +59,17 @@ fish_tb
 
 ## Goal: Output the columns called mat, age, and sex from
 ## (a) the fish data frame
-select(fish, mat, age, sex)
+select(???, ???, ???, ???)
 ## (b) the fish_tb tibble
-select(fish_tb, mat, age, sex)
+select(???, ???, ???, ???)
 
 # - filter() ----
 # filter() : filters rows from a data frame
 # Example: Output the rows that correspond to fish caught prior to 2010
-filter(fish_tb, year < 2010)
+filter(fish_tb, ???)
 
 # Goal: Output the rows that correspond to male fish
-filter(fish_tb, sex == "male")
+filter(fish_tb, ???)
 
 ## What is the output from the following line of code?
 filter(fish_tb,
@@ -82,11 +82,11 @@ filter(fish_tb,
 ## anywhere except location 3
 ## that are larger than 500 mm
 filter(fish_tb,
-       mat == "immature",
-       sex == "female",
-       year %in% c(2004, 2006, 2009),
-       loc != 3,
-       tl > 500)
+       ???,
+       ???,
+       ???,
+       ???,
+       ???)
 
 # Creating Workflows ----
 # Information is put into a "pipe"
@@ -94,17 +94,17 @@ filter(fish_tb,
 # as the first argument for the function that awaits
 
 # Goal: Find the square root of 81
-81 %>% sqrt()              # 81 becomes the argument for sqrt()
+81 %>% sqrt() # 81 becomes the input for sqrt()             
 
 # Goal: Output the column called year
-select(fish_tb, year)     # Standard use of select()
+select(fish_tb, ???)     # Standard use of select()
 
-fish_tb %>% select(year)  # Pipeline use of select()
+??? %>% select(???)  # Pipeline use of select()
 # fish_tb becomes the first argument for select()
 
 # This can also be written as
-fish_tb %>%
-  select(year)
+??? %>%
+  select(???)
 
 # Pipes are valuable when we want to perform multiple steps
 
@@ -113,15 +113,15 @@ fish_tb %>%
 sqrt(abs(-16))  # The output of abs(-16) becomes the argument for sqrt()
 
 # Using pipes:
--16 %>%
-  abs() %>%
+??? %>%
+  abs %>%
   sqrt()
 
 # Goal: Considering only fish caught prior to 2010,
 # output the columns called year, mat, and tl
 fish_tb %>%
-  filter(year < 2010) %>%
-  select(year, mat, tl)
+  filter(???) %>%
+  select(???, ???, ???)
 
 ## Can you explain why this gives the same output?
 fish_tb %>%
@@ -137,15 +137,15 @@ fish_tb %>%
 ## Output the weight (w), total length (tl),
 ## and age of fish caught in that location
 fish_tb %>%
-  filter(loc == 2) %>%
-  select(w, tl, age,loc)
+  filter(loc == ???) %>%
+  select(???, ???, ???,???)
 
 ## Output the grid id (grid), year and tl of instances
 ## where male fish smaller than 250 mm were captured
 fish_tb %>%
-  filter(sex == "male",
-         tl < 260) %>%
-  select(grid, year, tl)
+  filter(sex == ???,
+         tl < ???) %>%
+  select(???, ???, ???)
 
 # Modifying Data with {dplyr} ----
 # - mutate() ----
@@ -155,14 +155,14 @@ fish_tb %>%
 
 # Goal: Create a new column called user that contains your name
 fish_tb %>%
-  mutate(user = "Will")
+  mutate(???)
 
 glimpse(fish_tb) # What do you notice?
 
 # To make the change permanent, you need to overwrite the
 # original object
 fish_tb <- fish_tb %>%
-  mutate(user = "Will")  # "replace fish_tb with this new version"
+  mutate(???)  # "replace fish_tb with this new version"
 
 glimpse(fish_tb)
 
@@ -170,14 +170,14 @@ glimpse(fish_tb)
 
 # Goal: Convert tl from mm to cm (divide by 10)
 fish_tb %>%
-  mutate(tl_cm = tl/10)
+  mutate(tl_cm = ???)
 
 fish_tb <- fish_tb %>%
-  mutate(tl_cm = tl/10)
+  mutate(tl_cm = ???)
 
 ## Goal: Create column of condition factor (weight / total length in cm)
 fish_tb <- fish_tb %>%
-  mutate(condition = w / tl_cm)
+  mutate(condition =???)
 
 glimpse(fish_tb)
 
@@ -186,7 +186,7 @@ glimpse(fish_tb)
 # Goal: Create a TRUE/FALSE column called lunker
 # that describes if a fish is greater than 70 cm
 fish_tb <- fish_tb %>%
-  mutate(lunker = tl_cm > 70)
+  mutate(lunker = ???)
 
 glimpse(fish_tb)
 summary(fish_tb)
@@ -197,7 +197,7 @@ fish_tb %>%
 ## Goal: Create a column called age_type that is "Old" if the fish is more than
 ## 10 years old and "Young" if it is not
 fish_tb <- fish_tb %>%
-  mutate(age_type = ifelse(age > 10, "Old", "Young"))
+  mutate(age_type = ifelse(???, ???, ???))
 
 glimpse(fish_tb)
 
@@ -211,11 +211,11 @@ glimpse(fish_tb)
 # 4 if the fish age is anything else
 fish_tb <- fish_tb %>%
   mutate(age_class = case_when(
-    age == 0 ~ 0,
-    age %in% c(1:5) ~ 1,
-    age %in% c(6:10) ~ 2,
-    age %in% c(11:17) ~ 3,
-    TRUE ~ 4
+    age == ??? ~ ???,
+    age %in% ??? ~ ???,
+    age %in% ??? ~ ???,
+    age %in% ??? ~ ???,
+    TRUE ~ ???
   ))
 
 fish_tb %>%
@@ -235,9 +235,9 @@ fish_tb %>%
 
 fish_tb <- fish_tb %>%
   mutate(loc = case_when(
-    loc == 1 ~ 'Shallow',
-    loc == 2 ~ 'Shelf',
-    loc == 3 ~ 'Deep'
+    ???,
+    ???,
+    ???
   ))
 
 # Exploratory Data Analysis with {dplyr} ----
@@ -245,59 +245,59 @@ fish_tb <- fish_tb %>%
 # group_by() : splits your data into groups based on the variables you specify
 # Goal: Group by location
 fish_tb %>%
-  group_by(loc)
+  ???(???)
 
 # - summarise() ----
 # summarise() : returns a single value based on the instructions you give it
 
 # Goal: Find the maximum age
 fish_tb %>%
-  summarise(max(age))
+  ???(???(???))
 
 ## Goal: Find the minimum year a fish was caught
 fish_tb %>%
-  summarise(min(year))
+  ???(???(???))
 
 # - group_by() & summarise () ----
 # Goal: Use group_by() and summarise() together to find the
 # total age (w) of fish, by location (loc)
 fish_tb %>%
-  group_by(loc) %>%
-  summarise(sum(age))
+  group_by(???) %>%
+  ???(???(???))
 
 # This can be stored as a data frame object
 total_ages <- fish_tb %>%
-  group_by(loc) %>%
-  summarise(sum(age))
+  ??? %>%
+  ???
 total_ages  # Look at the contents of total_area
 
 # The column names can be specified in summarise
 total_ages <- fish_tb %>%
-  group_by(loc) %>%
-  summarise(total_age = sum(age))
+  ??? %>%
+  ???(total_age = ???)
 total_ages
 
 # Goal: What is the average total length (tl) and
 # weight (w), by location?
 fish_tb %>%
-  group_by(loc) %>%
-  summarise(average_length = mean(tl),
-            average_weight = mean(w))
+  ???(???) %>%
+  ???(average_length = ???,
+            average_weight = ???)
 
 ## Why can't we find average weight?
 ## How can we tell R to ignore the NAs when calculating the average weight?
 fish_tb %>%
-  group_by(loc) %>%
-  summarise(average_length = mean(tl),
-            average_weight = mean(w, na.rm = TRUE))
+  ???(???) %>%
+  ???(average_length = ???,
+            average_weight = ???)
 
 ## Goal: What is the age of the oldest and 
 ## the condition of the skinniest fish
 ## by location?
 fish_tb %>%
-  group_by(loc) %>%
-  summarise(oldest = max(age),
-            skinniest = min(condition, na.rm = TRUE))
+  ???(???) %>%
+  ???(oldest = ???,
+            skinniest = ???)
 
 # - Other summarise() functions ----
 # -- n() ----
@@ -305,19 +305,19 @@ fish_tb %>%
 
 # Goal: How many fish in each location?
 fish_tb %>%
-  group_by(loc) %>%
-  summarise(fish = n())
+  ???(???) %>%
+  ???(fish = ???)
 
 # Goal: How many fish in each location, by age_class?
 fish_tb %>%
-  group_by(loc, age_class) %>%
-  summarise(fish = n())
+  ???(???, ???) %>%
+  ???(fish = ???)
 
 ## Goal: How many males were captured each year?
 fish_tb %>%
-  filter(sex == "male") %>%
-  group_by(year) %>%
-  summarise(fish = n())
+  filter(sex == ???) %>%
+  group_by(???) %>%
+  summarise(fish = ???)
 
 # -- n_distinct() ----
 # n_distinct() : counts unique occurences of a variable in each group using summarise()
@@ -325,15 +325,15 @@ fish_tb %>%
 # Goal: How many different age_classes were captured each year?
 fish_tb %>%
   group_by(year) %>%
-  summarise(number_age_classes = n_distinct(age_class))
+  summarise(number_age_classes = ???)
 
 # Goal: How many different age_classes were captured each year, and
 # what was the minimum and maximum age_class each year?
 fish_tb %>%
   group_by(year) %>%
-  summarise(number_age_classes = n_distinct(age_class),
-            min_age_class = min(age_class),
-            max_age_class = max(age_class))
+  summarise(number_age_classes = ???,
+            min_age_class = ???,
+            max_age_class = ???)
 
 # --- rename() and rename_with() ---
 # rename() allows us to rename specified columns
@@ -346,16 +346,18 @@ colnames(fish_tb)
 # Location, Year, Total_Length_cm using the rename() function
 fish_tb %>%
   select(loc,year,tl_cm) %>%
-  rename(Location = loc,
-         Year = year,
-         Total_length_cm = tl_cm)
+  rename(??? = ???,
+         ??? = ???,
+         ??? = ???)
 
 # Goal: Select the location ('loc'), year ('year'), total length in cm ('tl_cm') and weight ('w') and rename them
 # Location, Year, Total_Length_cm, Weight using the rename_with() function
-new_names <- c('Location', 'Year', 'Total_length_cm','Weight')
+
+new_names <- c(???, ???, ???,???)
+
 fish_tb %>%
   select(loc, year, tl_cm, w) %>%
-  rename_with(~new_names)
+  rename_with(~ ???)
 
 # Exercise ----
 # Rename 'year' to 'Year'
@@ -368,13 +370,4 @@ fish_tb %>%
 # (e) the total weight (w), called "Total_weight"
 # (f) extra challenge: how many young fish it had (age_type is "Young"), called "Count_young"
 ##### hint: think about characteristics of data classes
-fish_tb %>%
-  rename(Year = year) %>%
-  filter(Year %in% c(2004, 2008, 2010, 2011, 2014)) %>%
-  group_by(Year) %>%
-  summarise(Count = n(),
-            Grids = n_distinct(grid),
-            Smallest_fish = min(tl_cm),
-            Avg_condition = mean(condition, na.rm = TRUE),
-            Total_weight = sum(w, na.rm = TRUE),
-            Count_young = sum(age_type == "Young"))
+
