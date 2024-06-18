@@ -73,7 +73,7 @@ library(dplyr)
 
 # https://www.tidyverse.org/packages/
 
-
+View(inner_join(data, taxonomy, by = 'common_name'))
 
 # ---- Working with dates ----
 separate(data$date, into = c('year', 'month',' day'), sep = '-')
