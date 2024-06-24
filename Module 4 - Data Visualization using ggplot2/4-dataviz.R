@@ -2,8 +2,12 @@
 library(ggplot2)
 library(dplyr)
 
+# Make sure we can find the data
+getwd()
+setwd()
+
 # Import data ----
-fish <- read.delim("fish.txt")
+fish <- read.delim("data/fish.txt")
 
 # The grammar of graphics ----
 # Any visualization has three components:
@@ -231,8 +235,7 @@ plot3 + facet_grid(site~habitat)
 plot3 + facet_grid(habitat~site)
 
 # ---- Capstone ----
-# 1. Complete the Capstone 2 exercise from the previous lesson
-# 2. Use the resulting table to reproduce the figure called myfigure.png
+# Use the resulting table to reproduce the figure called myfigure.png
 
 plotme <- fish %>%
   filter(common_name == "Central Stoneroller") %>%
@@ -266,27 +269,24 @@ plotme <- fish %>%
 # (11) Draw a dashed line representing the minumum number captured per year
 # (12) Allow the y axis limits to be based only on the points within them
 ## Hint: Look at R Cookbook ggplot2 under "Facets"
-# (13) Specify the colors to be used as red, blue, purple, orange, and black
-## Hint: Look at R Cookbook ggplot2 under "Colors" > "Palettes Manually Defined"
-# (14) Name the legend "Site ID"
+# (13) Name the legend "Site ID"
 ## Hint: You can specify this in the name argument of the function used in step (13) 
-# (16) Add a title: "Central Stonerollers in Pools (1999 - 2012)"
+# (14) Add a title: "Central Stonerollers in Pools (1999 - 2012)"
 ## Hint: ggtitle()
-# (17) Store your finished plot in an object called myfigure
-# (18) Save your plot to your working directory
+# (15) Store your finished plot in an object called myfigure
+# (16) Save your plot to your working directory
 ## Hint: ggsave()
 ## Bonus: Make the plot 7 inches wide and 9 inches high
 
 # Solution:
 myfigure <- ggplot(plotme) +
-  geom_point(aes(x = year, y = catch_average, col = site), size = 4, shape = "triangle") + 
+  geom_point(aes(x = year, y = catch_average, col = site), size = 2, shape = "triangle") + 
   geom_line(aes(x = year, y = catch_average, col = site)) +
   geom_line(aes(x = year, y = catch_maximum, col = site), linetype = "dashed") +
   geom_line(aes(x = year, y = catch_minimum, col = site), linetype = "dashed") +
   labs(x = "Year", y = "Mean Number Captured", col = "Site ID") + 
   theme_bw() +
   facet_wrap(~site, ncol = 1, scales = "free_y") +
-  scale_color_manual(values = c("red", "blue", "purple", "orange", "black")) +
   ggtitle("Central Stonerollers in Pools (1999 - 2012)")
 
 myfigure
