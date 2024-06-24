@@ -25,54 +25,55 @@ getwd()
 setwd("C:/Users/wills/OneDrive - Acadia University/Will Sutherland (136915s)/General R Work/Spring2024_AcadiaU_RWorkshop")
 
 # List the files & folders in the project
-list.files()
+
 
 # List the files & folders in the "data" folder
-list.files("data")
+
 
 # parks.csv is in "comma separated values" format
-parks <- read.csv("data/parks.csv") # Create an object called parks containing the data frame
+ # Create an object called parks containing the data frame
 
 # ---- QA/QC Techniques I: Exploring Data ----
 # Explore Data: preview
-head(parks)    # Print the first six rows
-tail(parks)    # Print the last six rows
-View(parks)    # View the data in a separate tab
+   # Print the first six rows
+   # Print the last six rows
+   # View the data in a separate tab
 
 # Explore Data: structure
-nrow(parks)   # How many rows?
-ncol(parks)    # How many columns?
-dim(parks)     # How many rows and columns?
-colnames(parks)   # Print column names
+  # How many rows?
+  # How many columns?
+  # How many rows and columns?
+  # Print column names
 
 # Explore Data: class
-str(parks)     # Print data structure
+ # Print data structure
 
 # ---- Interacting with Data Frames ----
 # Interact with Data: columns as vectors
 # Columns can be extracted as vectors using $
 # objectname$component
 
-parks$park_name   # Look at the values in the park_name column
-parks$acres
+# Look at the values in the park_name column
+
 
 # Interact with Data: indexing
 # [*] represents the position of each value in an object
 
 # vectors: one dimensional; one position required
-parks$park_name[4]  # Look at the value in the fourth position of the vector
+  # Look at the value in the fourth position of the vector
 
 # data frames: two dimensional, two positions required
-parks[3, 2]             # Look at the value in the third row, second column of the data frame
-parks[3, "park_name"]   # Select the column based on column name
+# [row, column]
+            # Look at the value in the third row, second column of the data frame
+            # Select the column based on column name
 
 ## Goal: Find the tenth value in the park_code column
 ## (a) indexing from a vector
-parks$park_code[10]
+
 ## (b) indexing from a data frame using a numeric value to select the column
-parks[10, 1]
+
 ## (c) indexing from a data frame using a character value to select the column
-parks[10, "park_code"]
+
 
 # Indexing used to be an absolutely essential tool!
 # The move toward alternative methods of interacting with data frames
@@ -80,27 +81,27 @@ parks[10, "park_code"]
 
 # ---- QA/QC Techniques II: Assessing Data ----
 # Assessing Data: numeric variables
-summary(parks) # Summary statistics
+ # Summary statistics
 
 # Assessing Data: character variables
-unique(parks$state)         # Print unique state values
-length(unique(parks$state)) # How many unique state values?
+       # Print unique state values
+       # How many unique state values?
 
 # Simple Tables
-table(parks$state) # Count occurrences of each state
+ # Count occurrences of each state
 
 # Simple Visualizations: Univariate
-hist(parks$acres) # Histogram of acres
-barplot(table(parks$state))  # Barplot of states
+   # Histogram of acres
+   # Barplot of states
 
 # Simple Visualizations: Multivariate
-plot(parks)                        # Scatterplots of all variables
-plot(parks$acres ~ parks$year)     # Scatterplot of acres by year
-boxplot(parks$acres ~ parks$state) # Distribution of acres by state
+ # Scatterplots of all variables
+ # Scatterplot of acres by year
+ # Distribution of acres by state
 
 ## Each park should have exactly one row in the data
 ## Which technique(s) would you use to confirm that no parks are repeated?
-nrow(parks)                     # 56 rows
-length(unique(parks$park_name)) # 56 unique park names
+nrow(parks)                     
+length(unique(parks$park_name)) 
 # or
-table(parks$park_name) # Scroll through output and make sure they are all 1
+table(parks$park_name) 
