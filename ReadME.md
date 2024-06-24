@@ -2,6 +2,15 @@
 
 Session 1: Introduction to RStudio, Spring 2024 [Course Outline](https://github.com/willsuther/Spring2024_AcadiaU_RWorkshop/blob/main/Session1CourseOuline.md)
 
+•	9:00am-9:15am: Set-up and introduction
+•	9:15am-10:45am: Module 1 – Introduction to R and R Studio
+•	10:45am-11:00am: Break
+•	11:00am-12:00pm: Module 2 – Best Practices of Tidy Data
+•	12:00pm-1:00pm: Lunch Break
+•	1:00pm-2:30pm: Module 3 – Data Wrangling
+•	2:30pm-2:45pm: Break
+•	2:45pm-3:15pm: Module 4 – Data Visualization
+
 Session 2: Statistical Analysis with RStudio, Summer 2024 [Course Outline](https://github.com/willsuther/Summer2024_AcadiaU_RWorkshop/blob/main/Session2CourseOutline.md)
 
 **FULL WORKSHOP MATERIALS WILL BE MADE AVAILABLE AT A LATER DATE**
