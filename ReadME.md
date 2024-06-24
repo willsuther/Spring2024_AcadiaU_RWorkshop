@@ -2,8 +2,8 @@
 
 Session 1: Introduction to RStudio, Spring 2024 [Course Outline](https://github.com/willsuther/Spring2024_AcadiaU_RWorkshop/blob/main/Session1CourseOuline.md)
 
---	9:00am-9:15am: Set-up and introduction
--9:15am-10:45am: Module 1 – Introduction to R and R Studio
+- 9:00am-9:15am: Set-up and introduction
+- 9:15am-10:45am: Module 1 – Introduction to R and R Studio
 -	10:45am-11:00am: Break
 -	11:00am-12:00pm: Module 2 – Best Practices of Tidy Data
 -	12:00pm-1:00pm: Lunch Break
