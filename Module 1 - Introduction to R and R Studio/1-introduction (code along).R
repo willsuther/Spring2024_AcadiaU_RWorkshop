@@ -12,19 +12,18 @@
 # When we run code, the result will show in the console
 
 # If you want to reset a line in your console, click into your console and hit Esc
-# If you want to clear your console, Ctrl+L (you will lose your console history)
-
 
 # ---- 2. Mathematical Operators ----
 
 # We can use R to act as a calculator to perform math
 # See the result in the console?
-2 + 2
-2 - 10
-5 * 5
-4/10
-(2+1)/13
-3^2
+
+ # + is for addition
+ # - is for subtraction
+ # * is for multiplication 
+ # / is for division
+ # you can use brackets () for BEDMAS
+ # ^ is for exponents
 
 # Now, clear your console!
 
@@ -32,17 +31,16 @@
 # A logical operation will return a value of TRUE or FALSE
 
 # 2 is equal to 2
-# Double equals sign means equal in R!
-2 ??? 2
+2 ??? 2 # == is equal
 
 # 2 is NOT equal to 3
-2 ??? 3
+2 ??? 3 # != is not equal
 
 # 2 is greater than 0 
-2 ??? 0
+2 ??? 0 # > is greater than
 
 # 2 is less than or equal to 5
-2 ??? 5
+2 ??? 5 # <= is less than or equal to
 
 # 2 is not equal to 8
 2 ??? 8
@@ -74,12 +72,12 @@
 # Goal: Find the square root of 81
 # Function name: sqrt
 # Argument: 81
-???(???)
+
 
 # Goal: Find the absolute value of 6-14
 # Function name: abs
 # Argument: 6-14
-???(???)
+
 
 # Goal: Find the square root of the absolute value of 4 - 20
 
@@ -101,11 +99,11 @@ sqrt("a")
 # Objects ("containers") store information
 
 # Goal: find the value of the object pi
-pi
+
 
 # Goal: Use pi to accomplish a task
 # Eg. divide pi by 2
-pi/2
+
 
 # Goal: make an object called x that contains the value 2
 # Use the assignment operator
@@ -141,21 +139,13 @@ output
 
 # ---- 6. Data Classes ----
 # 1. Numeric
-num <- ???
-num
-class(num)
-sqrt(num)
+
 
 # 2. Character
-char <- ???
-char
-class(char)
-sqrt(char)
+
 
 # 3. Logical
-logic <- ???
-logic
-class(logic)
+
 sqrt(logic) # Wait... why does this work?
 sqrt(FALSE) # Hint: try running this...
 
@@ -212,25 +202,21 @@ scores
 
 # Goal: Create a new object called newscores that contains
 # the values from scores treated as a numeric vector
-newscores <- ???(???)
-newscores
+
 
 # Goal: What is th average/minimum/maximum test score?
-???(???)
-???(???)
-???(???)
+
 
 # ---- 7.2 Dealing with NAs ----
 # Missing values are represented by NA
 
 # Goal: Calculate basic statistics while ignoring the NAs
-mean(newscores, ???)
+
 # na.rm is an optional argument in several similar functions
-min(newscores, ???)
-max(newscores, ???)
+
 
 # Goal: Find which values are NA
-???(newscores) 
+
 
 # is.na() is a function that acts like a conditional operator
 # checks if each value is NA
@@ -262,10 +248,9 @@ mydata
 # dataframename$columnname
 
 mydata$numbers # Show me the contents of the column called numbers in the object mydata
-mydata$animals
-mydata$testscores
+
 
 # Then you can treat the extracted contents like a regular vector
-mean(mydata$numbers)
+
 
 # Option 3: Downloading data from an external source
